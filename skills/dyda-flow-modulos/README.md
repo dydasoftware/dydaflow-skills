@@ -1,6 +1,6 @@
 # DyDa Flow · Diseña los módulos de tu negocio
 
-**Skill oficial de DyDa Flow · Versión 1.0.0 · Validado con DyDa Flow 0.223.4.**
+**Skill oficial de DyDa Flow · Versión 1.0.1 · Referencia de validación: DyDa Flow 0.223.5.**
 
 Tu asistente te entrevista sobre el negocio, propone módulos y campos, y te deja aceptar, quitar o agregar. Al confirmar el resumen, entrega un prompt para copiar en el **Diseñador IA de DyDa Flow**. Funciona para distintos giros y también para procesos internos.
 
@@ -8,7 +8,7 @@ La entrevista prepara la estructura: no entra a tu cuenta ni aplica cambios. En 
 
 ## Instalar en Claude Desktop o claude.ai
 
-1. Usa el ZIP `dyda-flow-modulos-1.0.0.zip` de la entrega manual o de la release, cuando esté publicada. Contiene una carpeta `dyda-flow-modulos` y, dentro, `SKILL.md` y sus referencias.
+1. Usa el ZIP `dyda-flow-modulos-1.0.1.zip` de la entrega manual o de la release, cuando esté publicada. Contiene una carpeta `dyda-flow-modulos` y, dentro, `SKILL.md` y sus referencias.
 2. En **Configuración → Capacidades**, habilita **Ejecución de código y creación de archivos**. En una organización, esta función puede depender de su administrador.
 3. Abre **Personalizar → Skills** —puede aparecer como **Customize → Skills**—, pulsa **+ → Crear skill → Subir un skill** y selecciona el ZIP.
 4. Activa el skill y comienza una conversación: «Quiero diseñar los módulos de mi negocio para DyDa Flow».
@@ -37,4 +37,8 @@ En un Proyecto de Claude, usa ese mismo texto como instrucciones del proyecto y 
 4. Copia el bloque final en el **Diseñador IA**, revisa el plano y sus avisos y decide si lo aplicas.
 5. Configura después las vistas, avisos u otros pendientes en las pantallas que te indique el asistente.
 
-Puedes consultar [qué se puede construir](references/capacidades.md) y [tres recorridos de ejemplo](references/ejemplos.md). No necesitas compartir contraseñas ni registros reales para diseñar la estructura.
+El asistente cuenta el bloque final y usa el límite de **20,000 caracteres desde Flow 0.223.5**. Para versiones anteriores o si indicas que Flow corta el texto, usa **4,000**. Primero compacta sin perder acuerdos; si aún no cabe, acuerda una generación esencial y un ajuste posterior que cuesta **1 crédito adicional**.
+
+Si quieres facturar desde lo que entregas, acuerda usar **Pedidos**, **Embarques** o **Cuentas por cobrar** y los campos reconocidos por Facturación. Puedes renombrar el módulo después de crearlo. La estructura permite preparar el borrador; la configuración fiscal y su revisión se hacen después.
+
+Puedes consultar [qué se puede construir](references/capacidades.md) y [cuatro recorridos de ejemplo](references/ejemplos.md), incluido un empaque agrícola. No necesitas compartir contraseñas ni registros reales para diseñar la estructura.

@@ -50,6 +50,8 @@ Copia el texto de [instrucciones para otras IA](skills/dyda-flow-modulos/instruc
 
 La primera generación en el Diseñador cuesta **2 créditos**; cada ajuste, **1**. Preparar el prompt en otra IA no consume esos créditos, aunque esa IA puede tener su propio costo. Revisa **Ajustes → Plan y consumo** antes de generar.
 
-Consulta [capacidades](skills/dyda-flow-modulos/references/capacidades.md) y [tres ejemplos](skills/dyda-flow-modulos/references/ejemplos.md).
+La skill cuenta el prompt antes de entregarlo: hasta **20,000 caracteres desde Flow 0.223.5**, o **4,000** en versiones anteriores o si Flow corta el texto. Compacta sin perder decisiones; si requiere generar en dos etapas, avisa del **crédito adicional** del ajuste. Si facturas desde lo entregado, prepara Embarques y sus partidas con los nombres que reconoce Facturación; después puedes renombrar el módulo.
 
-**Skill 1.0.0 · Validado con DyDa Flow 0.223.4 · Licencia [MIT](LICENSE) · DyDa Software.**
+Consulta [capacidades](skills/dyda-flow-modulos/references/capacidades.md) y [cuatro ejemplos](skills/dyda-flow-modulos/references/ejemplos.md), incluido un empaque agrícola.
+
+**Skill 1.0.1 · Referencia de validación: DyDa Flow 0.223.5 · Licencia [MIT](LICENSE) · DyDa Software.**

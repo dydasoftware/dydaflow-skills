@@ -9,7 +9,7 @@
       "name": "dydaflow",
       "source": "./",
       "description": "Skills oficiales de DyDa Flow para diseñar módulos y preparar el prompt del Diseñador IA.",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "license": "MIT"
     }
   ]

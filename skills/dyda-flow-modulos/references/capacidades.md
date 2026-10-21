@@ -1,6 +1,6 @@
 # Capacidades del Diseñador IA de DyDa Flow
 
-Referencia del skill 1.0.0, contrastada con DyDa Flow 0.223.4. Describe lo que se puede solicitar; la propuesta generada debe revisarse antes de aplicarla.
+Referencia del skill 1.0.1 para DyDa Flow 0.223.5. Describe lo que se puede solicitar; la propuesta generada debe revisarse antes de aplicarla. El nuevo límite de mensaje requiere esa versión; en versiones anteriores aplica el límite indicado abajo.
 
 ## Qué construye
 
@@ -55,6 +55,14 @@ Reutiliza los datos que ya existen. Si basta con campos adicionales, amplía el 
 
 Si Citas base está instalado, no propongas otra agenda, reservas o turnos equivalentes. Conserva su flujo: Agendada, Confirmada, En curso, Terminada, Cancelada y No asistió. Su estado inicial es Agendada; no deduzcas cambios permitidos entre todas las opciones. El Diseñador no instala plantillas prearmadas: si falta una, la persona elige el módulo prearmado antes, o acuerda crear uno propio. No prometas instalar la plantilla dentro del prompt.
 
+## Facturar desde lo que se entrega
+
+Si se quiere facturar lo vendido o entregado, Flow puede crear una **factura en borrador** desde un registro de **Pedidos**, **Embarques** o **Cuentas por cobrar**. El módulo debe haberse creado con ese nombre: se puede crear como Embarques y después renombrar a Manifiestos, porque conserva su nombre interno. Renombrar a Embarques un módulo creado con otro nombre no le da esa compatibilidad. Reutiliza los compatibles que ya existan; no impongas estos nombres si la persona no quiere facturar desde ese documento.
+
+El documento lleva una liga llamada **Cliente**, **Empresa** o **Contacto**. Si el cliente está más atrás en la operación, Flow puede seguir las ligas **Embarque** y **Pedido**, por ejemplo Cuenta por cobrar → Embarque → Pedido. Los conceptos se toman de partidas que se ligan al documento y tienen **Cantidad**, **Cajas** o **Kilos** (número), **Precio unitario**, **Precio** o **Valor unitario** (dinero), y una liga **Producto** o **Servicio** al catálogo correspondiente. En una cadena, Flow busca primero partidas del documento más antiguo y usa el primer conjunto encontrado; para facturar solo lo embarcado, prepara partidas propias del embarque y confirma que no se tomen las del pedido completo.
+
+El Diseñador prepara esa estructura; no configura ni timbra la factura. Después, en **Ajustes → Facturación**, se completa la integración fiscal de clientes y productos y se requiere una serie fiscal de facturas activa. Revisa cliente, cantidades, precios y conceptos del borrador antes de continuar en **Facturación**.
+
 ## Qué se configura después, fuera del prompt
 
 | Necesidad | Pantalla y alcance real |
@@ -83,6 +91,8 @@ Si Citas base está instalado, no propongas otra agenda, reservas o turnos equiv
 Explica la limitación cuando aparezca; acuerda una captura manual solo si la persona la acepta. Mantén estos pendientes fuera del bloque que se pegará en el Diseñador.
 
 ## Límites y créditos
+
+El mensaje del Diseñador admite hasta **20,000 caracteres desde DyDa Flow 0.223.5**; las versiones anteriores admiten **4,000**. Cuenta el bloque final completo antes de entregarlo. Si la persona dice que Flow corta el texto, aplica 4,000. Compacta agrupando campos del mismo tipo y obligatoriedad, quitando repeticiones y juntando catálogos iguales sin perder decisiones. Si aún no cabe, acuerda una primera generación esencial y un ajuste posterior; ese ajuste cuesta **1 crédito más**.
 
 | Plan | Módulos operativos propios | Créditos del Diseñador por periodo |
 |---|---:|---:|

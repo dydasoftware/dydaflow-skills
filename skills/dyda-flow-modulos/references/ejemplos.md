@@ -1,4 +1,4 @@
-# Tres conversaciones de ejemplo · DyDa Flow
+# Cuatro conversaciones de ejemplo · DyDa Flow
 
 Estos recorridos ilustran decisiones, no son plantillas para otros negocios. Los módulos existentes se confirmaron en cada conversación. Los nombres y datos son ficticios.
 
@@ -16,7 +16,7 @@ Estos recorridos ilustran decisiones, no son plantillas para otros negocios. Los
 
 **Persona:** Sí. No necesito un catálogo de idiomas; solo trabajamos español e inglés.
 
-**IA:** Para Contactos: Idioma preferido, una opción, opcional, Español o Inglés. Para Encargos: Folio consecutivo de seis dígitos, Cliente ligado a Contactos, Traductor responsable, Fecha de entrega, Idioma de entrega, Tipo de documento, Páginas y Tarifa por página, obligatorios; Archivo y Notas opcionales; Importe calculado y Estado obligatorio. Idiomas Español/Inglés; tipos General/Legal. Propongo estados Recibido, En traducción y Entregado, iniciando en Recibido y avanzando en ese orden. ¿Qué cambias?
+**IA:** Para Contactos: Idioma preferido, una opción, opcional, Español o Inglés. Para Encargos: Folio consecutivo de seis dígitos; propongo Cliente ligado a Contactos, Traductor responsable, Fecha de entrega, Idioma de entrega, Tipo de documento, Páginas y Tarifa por página como obligatorios; Archivo y Notas opcionales; Importe calculado y Estado obligatorio. Idiomas Español/Inglés; tipos General/Legal. Propongo estados Recibido, En traducción y Entregado, iniciando en Recibido y avanzando en ese orden. ¿Confirmas la obligatoriedad propuesta y esos estados, o qué cambiarías?
 
 **Persona:** Quita Tipo de documento. Acepto lo demás; el importe es páginas por tarifa. No bloquees la edición. Quiero que cada traductor vea sus encargos y pueda editarlos, sin borrar. Coordinación ve, crea y edita todos, sin borrar.
 
@@ -34,7 +34,7 @@ Contactos ya contiene nuestros clientes. Conserva sus campos, nombres y flujos; 
 
 MÓDULOS
 1. Contactos: Idioma preferido (una opción; opcional).
-2. Encargos: Folio (consecutivo; generado), Cliente (liga a Contactos; obligatorio), Traductor (usuario responsable; obligatorio), Fecha de entrega (fecha; obligatoria), Idioma de entrega (una opción; obligatorio), Páginas (número entero positivo; obligatorio), Tarifa por página (dinero; obligatoria), Archivo (archivo; opcional), Notas (texto; opcional), Importe (dinero; no se captura), Estado (una opción; obligatorio).
+2. Encargos: Folio (consecutivo; generado), Cliente (liga a Contactos; obligatorio), Traductor (usuario responsable; obligatorio), Fecha de entrega (fecha; obligatoria), Idioma de entrega (una opción; obligatorio), Páginas (número entero positivo; obligatorio), Tarifa por página (dinero; obligatoria), Archivo (archivo; opcional), Notas (texto; opcional), Importe (dinero), Estado (una opción; obligatorio).
 
 DETALLES POR MÓDULO
 Amplía Contactos; Idioma preferido tiene las opciones Español e Inglés.
@@ -153,3 +153,52 @@ Crea únicamente Revisiones internas y Áreas, sin catálogos de estados ni dupl
 ```
 
 **Después de copiar:** cargar las áreas en el catálogo Áreas y configurar la vista deseada en Editar módulo → Diseño del listado → Listado de registros. Revisar que el cierre exija Conclusión, sin volver obligatorio Hallazgo.
+
+## 4. Empaque agrícola: recepciones, estibas y embarques facturables
+
+**Persona:** Tenemos un empaque agrícola. Necesito recibir producto de distintos productores y mezclar varias recepciones en una estiba. Facturo las cajas que salen en cada manifiesto. Quiero que usted me ayude a definirlo; los catálogos los capturaremos después.
+
+**IA:** ¿Qué módulos tiene y qué cupo aparece en Plan y consumo? ¿Factura desde pedidos o directamente desde lo embarcado?
+
+**Persona:** Tenemos Contactos para clientes y Productos; Starter con diez módulos propios libres y veinte créditos. No usamos pedidos. Facturamos directamente cada embarque. Necesito productor, variedad y kilos recibidos; ubicación de estiba; fecha, cliente, transportista, chofer y placas al salir. Cada partida lleva estiba, producto, cajas, precio unitario e importe de cajas por precio. Sugiera los folios; no requiero estados.
+
+**IA:** Propongo Recepciones, Estibas, Mezcla de estibas, Embarques y Partidas de embarque, más Productores y Variedades como catálogos. Mezcla de estibas permite ligar varias recepciones a cada estiba y guardar sus kilos aportados. Crearemos Embarques con ese nombre para Facturación; después puede renombrarlo a Manifiestos. ¿Confirma las ligas y cantidades obligatorias —incluidos fecha y cliente del embarque—, los precios obligatorios y los demás textos opcionales, con folios de seis dígitos?
+
+**Persona:** Confirmo. Fecha de recepción y de estiba también obligatorias. Notas opcionales. En los catálogos, Nombre obligatorio y Teléfono de productor opcional. No agregue más requisitos.
+
+**IA:** Son siete módulos nuevos por plano: cinco operativos y dos catálogos; se reutilizan Contactos y Productos. Importe no se captura. Los catálogos se llenan después en sus módulos; la integración fiscal y una serie activa se preparan en Ajustes → Facturación antes de facturar. No hay otros pendientes. La generación cuesta 2 créditos; cada ajuste 1. ¿Confirma el conjunto?
+
+**Persona:** Confirmo.
+
+**Prompt final:**
+
+```text
+Diseña esta estructura en DyDa Flow para un empaque agrícola con mezcla de recepciones y facturación desde lo embarcado, sin pedidos.
+
+EXISTENTES A CONSERVAR
+Contactos para clientes y Productos ya existen; conserva sus campos, nombres y flujos.
+
+MÓDULOS
+1. Recepciones: Folio (consecutivo), Fecha (fecha; obligatoria), Productor (liga a Productores; obligatorio), Variedad (liga a Variedades; obligatoria), Kilos (número; obligatorio), Notas (texto; opcional).
+2. Estibas: Folio (consecutivo), Fecha (fecha; obligatoria), Ubicación, Notas (texto; opcional).
+3. Mezcla de estibas: Estiba (liga a Estibas; obligatoria), Recepción (liga a Recepciones; obligatoria), Kilos aportados (número; obligatorio).
+4. Embarques: Folio (consecutivo), Fecha (fecha; obligatoria), Cliente (liga a Contactos; obligatorio), Transportista, Chofer, Placas (texto; opcional).
+5. Partidas de embarque: Embarque (liga a Embarques; obligatorio), Estiba (liga a Estibas; obligatoria), Producto (liga a Productos; obligatorio), Cajas (número; obligatorio), Precio unitario (dinero; obligatorio), Importe (dinero).
+6. Productores: Nombre (texto; obligatorio), Teléfono (texto; opcional).
+7. Variedades: Nombre (texto; obligatorio).
+
+DETALLES POR MÓDULO
+Crea los cinco primeros como módulos operativos; Productores y Variedades son catálogos. Folios generados de seis dígitos sin prefijo. Kilos, Kilos aportados y Cajas mayores que cero; Cajas entero. Precio unitario en moneda de la organización, dos decimales y sin negativos. Crea el documento con el nombre Embarques.
+
+LIGAS Y PARTIDAS
+Cada liga elige un registro del destino indicado. Varias filas de Mezcla de estibas pueden enlazar una estiba con distintas recepciones y sus kilos aportados. Partidas de embarque se liga a Embarques mediante Embarque; cada partida identifica Estiba y Producto. Cliente se toma de Contactos. No agregues pedidos ni sus partidas.
+
+CAMPOS CALCULADOS
+- Campos calculados en Partidas de embarque: Importe.
+Multiplica Cajas por Precio unitario del mismo renglón.
+
+ALCANCE
+Crea solo lo acordado, sin estados nuevos ni duplicar módulos existentes. Explica omisiones o simplificaciones antes de aplicar el plano.
+```
+
+**Después de copiar:** Péguelo en el Diseñador IA y revise el plano antes de aplicarlo. Capture después Productores y Variedades en sus catálogos. Prepare la integración fiscal de clientes y productos y una serie activa en Ajustes → Facturación antes de generar el borrador. Puede renombrar Embarques a Manifiestos después de crearlo; revise que los conceptos correspondan a las cajas embarcadas.
