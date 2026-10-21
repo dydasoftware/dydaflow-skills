@@ -1,0 +1,15 @@
+# Documentación interna: no se distribuye en el repositorio público.
+/MANTENIMIENTO.md
+/PUBLICAR.md
+
+# Paquete local para carga manual; adjuntarlo a una release si se decide.
+/distribucion/
+
+# Datos y salidas locales.
+.env
+.env.*
+node_modules/
+*.log
+__pycache__/
+.DS_Store
+Thumbs.db

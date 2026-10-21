@@ -1,0 +1,16 @@
+{
+  "name": "dydaflow-skills",
+  "description": "Skills oficiales de DyDa Flow / Dydaflow / Flow ERP para diseñar módulos con el Diseñador IA.",
+  "owner": {
+    "name": "DyDa Software"
+  },
+  "plugins": [
+    {
+      "name": "dydaflow",
+      "source": "./",
+      "description": "Skills oficiales de DyDa Flow para diseñar módulos y preparar el prompt del Diseñador IA.",
+      "version": "1.0.0",
+      "license": "MIT"
+    }
+  ]
+}

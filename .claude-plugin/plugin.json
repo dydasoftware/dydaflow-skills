@@ -1,0 +1,11 @@
+{
+  "name": "dydaflow",
+  "version": "1.0.0",
+  "description": "DyDa Flow / Dydaflow / Flow ERP: entrevista para diseñar módulos y preparar un prompt para el Diseñador IA.",
+  "author": {
+    "name": "DyDa Software"
+  },
+  "repository": "https://github.com/dydasoftware/dydaflow-skills",
+  "license": "MIT",
+  "keywords": ["dydaflow", "dyda-flow", "flow-erp", "diseñar-módulos", "diseñador-ia"]
+}
